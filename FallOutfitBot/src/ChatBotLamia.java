@@ -1,5 +1,16 @@
-
+import java.util.Random;
 public class ChatBotLamia {
+	
+	public String getgreeting()
+	{
+		Random r = new Random();
+		return randomgreetings [r.nextInt(randomgreetings.length)];
+	}
+	private String[] randomgreetings = {"Hey, what is up", "Howdy, how do you do?", "What's shakin"};
+	/*public String getName(String name)
+	{
+		return "Nice to meet you" + name;
+	}
 	private int findKeyword(String statement, String goal,
 			int startPos)
 	{
@@ -56,9 +67,9 @@ public class ChatBotLamia {
 	 * @param goal the string to search for
 	 * @return the index of the first occurrence of goal in statement or -1 if it's not found
 	 */
-	private int findKeyword(String statement, String goal)
+	/*private int findKeyword(String statement, String goal)
 	{
 		return findKeyword (statement, goal, 0);
-	}
+	}*/
 	
 }

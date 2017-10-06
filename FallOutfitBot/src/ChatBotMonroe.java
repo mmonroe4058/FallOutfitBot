@@ -1,7 +1,9 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class ChatBotMonroe {
 	int emotion = 0;
+	Scanner in = new Scanner (System.in);
 	
 	public String beginChat()
 	{
@@ -11,15 +13,32 @@ public class ChatBotMonroe {
 	public String getResponse(String statement)
 	{
 		String response = "";
+		String accessory = "";
+		String x = "";
 		
 		beginChat();
 		
 		if(findKeyword(statement, "glasses", 0) >= 0)
 		{
-			response = "Say something, please.";
+			accessory = "glasses";
+			response = "You said glasses. What color would you like them in?";
+			x = in.nextLine();
+			getAccessory("glasses", x);
 		}
 		
 		return response;
+	}
+	
+	public String getAccessory(String accessory, String color)
+	{
+		if(accessory == "glasses")
+		{
+			if(color == "green")
+			{
+				String y = "http://www.zennioptical.com/blog/wp-content/uploads/2013/01/608324.png";
+				return y;
+			}
+		}
 	}
 	
 	private int findKeyword(String statement, String goal,

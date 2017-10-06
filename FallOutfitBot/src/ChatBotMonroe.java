@@ -22,21 +22,18 @@ public class ChatBotMonroe {
 		{
 			accessory = "glasses";
 			response = "You said glasses. What color would you like them in?";
-			x = in.nextLine();
-			getAccessory("glasses", x);
 		}
 		
 		return response;
 	}
 	
-	public String getAccessory(String accessory, String color)
+	private String getAccessory(String accessory, String color)
 	{
 		if(accessory == "glasses")
 		{
 			if(color == "green")
 			{
-				String y = "http://www.zennioptical.com/blog/wp-content/uploads/2013/01/608324.png";
-				return y;
+				return color;
 			}
 		}
 	}

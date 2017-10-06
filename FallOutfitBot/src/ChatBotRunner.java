@@ -17,14 +17,15 @@ public class ChatBotRunner
 		System.out.println ("Welcome to Fall Outfit Bot, a bot that recommends you fall themed outfits based on your preferences. Are you looking for male, female, or unisex clothes?");
 		Scanner in = new Scanner (System.in);
 		
-		String statement = in.nextLine();
 		String gender = "";
+		String statement = in.nextLine();
 		
-		if(statement.toLowerCase() == "male")
+		
+		if(statement.toLowerCase().equals("male"))
 		{
 			gender = "male";
 		}
-		else if(statement.toLowerCase() == "female")
+		else if(statement.toLowerCase().equals("female"))
 		{
 			gender = "female";
 		}
@@ -34,30 +35,30 @@ public class ChatBotRunner
 		}
 
 		
-		System.out.println("Thank you. Would you like to start with tops, bottoms, shoes, or accessories?");
+		System.out.println("You chose " + gender +". Would you like to start with tops, bottoms, shoes, or accessories?");
 		statement = in.nextLine();
 		
-		if(statement.toLowerCase() == "tops")
+		if(statement.toLowerCase().equals("tops"))
 		{
 			ChatBotSarwar chatbot1 = new ChatBotSarwar();
 			statement = in.nextLine();
 		}
-		/*
-		if(statement.toLowerCase() == "bottoms")
+		
+		if(statement.toLowerCase().equals("bottoms"))
 		{
 			ChatBotLamia chatbot2 =  new ChatBotLamia();
 			statement = in.nextLine();
 		}
-		*/
-		if(statement.toLowerCase() == "shoes")
+		
+		if(statement.toLowerCase().equals("shoes"))
 		{
 			ChatBotKaitlyn chatbot3 = new ChatBotKaitlyn();
 			statement = in.nextLine();
 		}
-		if(statement.toLowerCase() == "accessories")
+		if(statement.toLowerCase().equals("accessories"))
 		{
-			System.out.println("HECK");
 			ChatBotMonroe chatbot4 = new ChatBotMonroe();
+			System.out.println(chatbot4.beginChat());
 			while(!statement.equals("Bye"))
 			{
 				System.out.println(chatbot4.getResponse(statement));
@@ -69,5 +70,6 @@ public class ChatBotRunner
 		}
 
 	}
+	
 
 }

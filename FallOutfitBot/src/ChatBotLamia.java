@@ -6,7 +6,7 @@ public class ChatBotLamia {
 		Random r = new Random();
 		return randomgreetings [r.nextInt(randomgreetings.length)];
 	}
-	private String[] randomgreetings = {"Hey, what is up", "Howdy, how do you do?", "What's shakin","Hola,como estas?"};
+	private String[] randomgreetings = {"Hey, what is up", "Howdy, how do you do?", "What's shakin","Hola,como estas"};
 	/*public String getName(String name)
 	{
 		return "Nice to meet you" + name;

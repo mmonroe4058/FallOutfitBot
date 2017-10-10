@@ -1,12 +1,24 @@
 import java.util.Random;
 public class ChatBotLamia {
 	
-	public String getgreeting()
+	public String starttalking()
+	{
+		return generateRandomResponse(randomgreetings);
+	}
+	public String getresponse(String statement)
+	{
+		starttalking();
+		
+		return statement;
+	}
+	private String generateRandomResponse(String[]s)
 	{
 		Random r = new Random();
-		return randomgreetings [r.nextInt(randomgreetings.length)];
+		return s [r.nextInt(s.length)];
 	}
 	private String[] randomgreetings = {"Hey, what is up", "Howdy, how do you do?", "What's shakin","Hola,como estas"};
+	private String[] neutralstatements = {"Hmmm, very interesting", ""};
+	
 	/*public String getName(String name)
 	{
 		return "Nice to meet you" + name;

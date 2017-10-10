@@ -1,16 +1,42 @@
 import java.util.Random;
 public class ChatBotLamia {
 	
-	public String getgreeting()
+	public String starttalking()
+	{
+		return generateRandomResponse(randomgreetings) + "So what kind of pants are you generally interested in?";
+	} 
+	
+	public String getresponse(String statement)
+	{
+		String response = " ";
+		String type = "";
+		if((findKeyword(statement,generateRandomResponse(pant_types),0))>=0)
+		{
+			response = "You want " + type + ". Now can you tell me what kind of brands you would like of these types of pants?";
+			
+		}
+		else
+			{
+				response = generateRandomResponse(neutralstatements);
+			}
+		starttalking();
+		
+		return response;
+	}
+	private String generateRandomResponse(String[]s)
 	{
 		Random r = new Random();
-		return randomgreetings [r.nextInt(randomgreetings.length)];
+		return s [r.nextInt(s.length)];
 	}
 	private String[] randomgreetings = {"Hey, what is up", "Howdy, how do you do?", "What's shakin","Hola,como estas"};
+	private String[] pant_brands = {"Levis","Michael Kors"};
+	private String[] pant_types = {"pants"};
+	private String[] neutralstatements = {"Hmmm, very interesting", "Tell me more","Wow, I never thought of it like that","Get out of town"};
+	
 	/*public String getName(String name)
 	{
 		return "Nice to meet you" + name;
-	}
+	}*/
 	private int findKeyword(String statement, String goal,
 			int startPos)
 	{

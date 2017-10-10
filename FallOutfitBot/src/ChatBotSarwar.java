@@ -1,8 +1,26 @@
-
+import java.util.Random;
 public class ChatBotSarwar {
 	public String Start()
 	{
-		return "Let's start with a top.";
+		return "Okay, let's start with a top. Would you prefer a sweater, t-shirt, or jacket?";
+	}
+	public String getResponse(String statement)
+	{
+		String response = "";
+		if(statement.toLowerCase().equals("jacket"))
+		{
+			response = "Do you need help with finding something to wear underneath that jacket?";
+			if(statement.toLowerCase().equals("yes"))
+			{
+				response = "No problem, I got you!";
+			}
+			/*else
+			{
+				response = "Let's look for a jacket then.";
+			}*/
+		}
+		return response;
+		
 	}
 	private int findKeyword(String statement, String goal,int startPos)
 	{

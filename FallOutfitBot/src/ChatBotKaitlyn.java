@@ -75,7 +75,7 @@ public class ChatBotKaitlyn {
 
 		// Refinement--make sure the goal isn't part of a
 		// word
-		while (psn >= 0)
+		while (psn >= 0) 
 		{
 			// Find the string of length 1 before and after
 			// the word

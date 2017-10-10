@@ -74,7 +74,7 @@ public class ChatBotKaitlyn {
 		int psn = phrase.indexOf(goal, startPos);
 
 		// Refinement--make sure the goal isn't part of a
-		// word
+		// word 
 		while (psn >= 0) 
 		{
 			// Find the string of length 1 before and after

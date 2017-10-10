@@ -3,14 +3,22 @@ public class ChatBotLamia {
 	
 	public String starttalking()
 	{
-		return generateRandomResponse(randomgreetings);
+		return generateRandomResponse(randomgreetings) + "So what kind of pants are you generally interested in?";
 	} 
 	
 	public String getresponse(String statement)
 	{
+		String response = " ";
+		String type = "";
+		if((findKeyword(statement,generateRandomResponse(pant_types),0))>=0)
+		{
+			response = "You want " + type + ". Now can you tell me what kind of brands you would like of these types of pants?";
+			
+		}
+		response = generateRandomResponse(neutralstatements);
 		starttalking();
-		return statement;
 		
+		return response;
 	}
 	private String generateRandomResponse(String[]s)
 	{
@@ -19,13 +27,13 @@ public class ChatBotLamia {
 	}
 	private String[] randomgreetings = {"Hey, what is up", "Howdy, how do you do?", "What's shakin","Hola,como estas"};
 	private String[] pant_brands = {"Levis","Michael Kors"};
-	
+	private String[] pant_types = {"pants"};
 	private String[] neutralstatements = {"Hmmm, very interesting", "Tell me more","Wow, I never thought of it like that","Get out of town"};
 	
 	/*public String getName(String name)
 	{
 		return "Nice to meet you" + name;
-	}
+	}*/
 	private int findKeyword(String statement, String goal,
 			int startPos)
 	{

@@ -8,16 +8,17 @@ import java.util.Scanner;
 public class ChatBotKaitlyn {
 	
 	int feelings = 0;
+	private Scanner input;
 	public String greetUser()
 	{
 		//Random r = new Random();
 		//return randomGreetings[r.nextInt(randomGreetings.length)];
 		System.out.println("Hey! What's your name?");
-		Scanner input = new Scanner(System.in);
+		input = new Scanner(System.in);
 		String name = input.next();
 		
 		return "Need help picking some shoes, "+ name + "?";
-	}
+	} 
 	
 	//private String [] randomGreetings = {"Hi", "How may I help you?", "Need help picking some shoes?"};
 	

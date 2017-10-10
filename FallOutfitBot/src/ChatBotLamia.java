@@ -15,7 +15,10 @@ public class ChatBotLamia {
 			response = "You want " + type + ". Now can you tell me what kind of brands you would like of these types of pants?";
 			
 		}
-		response = generateRandomResponse(neutralstatements);
+		else
+			{
+				response = generateRandomResponse(neutralstatements);
+			}
 		starttalking();
 		
 		return response;

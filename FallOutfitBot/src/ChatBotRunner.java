@@ -34,6 +34,7 @@ public class ChatBotRunner
 			gender = "unisex";
 		}
 
+
 		
 		System.out.println("You chose " + gender +". Would you like to start with tops, bottoms, shoes, or accessories?");
 		statement = in.nextLine();
@@ -54,7 +55,12 @@ public class ChatBotRunner
 		if(statement.toLowerCase().equals("shoes"))
 		{
 			ChatBotKaitlyn chatbot3 = new ChatBotKaitlyn();
-			statement = in.nextLine();
+			System.out.println(chatbot3.greetUser());
+			while(!statement.equals("Bye"))
+			{
+				System.out.println(chatbot3.getResponse(statement));
+				statement = in.nextLine();
+			}			
 		}
 		if(statement.toLowerCase().equals("accessories"))
 		{

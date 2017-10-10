@@ -40,7 +40,7 @@ public class ChatBotLevin
 			response = "Why so negative?";
                 	emotion--;
 		}
-		
+		 
 		else if (findKeyword(statement, "levin") >= 0)
 		{
 			response = "More like LevinTheDream amiright?";

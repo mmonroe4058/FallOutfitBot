@@ -41,17 +41,20 @@ public class ChatBotRunner
 		if(statement.toLowerCase().equals("tops"))
 		{
 			ChatBotSarwar chatbot1 = new ChatBotSarwar();
-			System.out.println(chatbot1.Start());
-			while(!statement.equals("I'm done"))
-			{
-				System.out.println(chatbot1.getResponse(statement));
-				statement = in.nextLine();
-			}
+			
+			statement = in.nextLine();
 		}
 		
 		if(statement.toLowerCase().equals("bottoms"))
 		{
 			ChatBotLamia chatbot2 =  new ChatBotLamia();
+			System.out.println(chatbot2.starttalking());
+			while(!statement.equals("Bye"))
+			{
+				System.out.print(chatbot2.getresponse(statement));
+				statement=in.nextLine();
+				
+			}
 			statement = in.nextLine();
 		}
 		

@@ -4,12 +4,13 @@ public class ChatBotLamia {
 	public String starttalking()
 	{
 		return generateRandomResponse(randomgreetings);
-	}
+	} 
+	
 	public String getresponse(String statement)
 	{
 		starttalking();
-		
 		return statement;
+		
 	}
 	private String generateRandomResponse(String[]s)
 	{
@@ -17,7 +18,9 @@ public class ChatBotLamia {
 		return s [r.nextInt(s.length)];
 	}
 	private String[] randomgreetings = {"Hey, what is up", "Howdy, how do you do?", "What's shakin","Hola,como estas"};
-	private String[] neutralstatements = {"Hmmm, very interesting", ""};
+	private String[] pant_brands = {"Levis","Michael Kors"};
+	
+	private String[] neutralstatements = {"Hmmm, very interesting", "Tell me more","Wow, I never thought of it like that","Get out of town"};
 	
 	/*public String getName(String name)
 	{

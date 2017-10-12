@@ -8,6 +8,7 @@ public class ChatBotLamia {
 	
 	public String getresponse(String statement)
 	{
+		starttalking();
 		String response = " ";
 		String type = "";
 		if((findKeyword(statement,generateRandomResponse(pant_types),0))>=0)
@@ -19,7 +20,7 @@ public class ChatBotLamia {
 			{
 				response = generateRandomResponse(neutralstatements);
 			}
-		starttalking();
+		
 		
 		return response;
 	}

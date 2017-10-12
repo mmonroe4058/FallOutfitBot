@@ -72,7 +72,6 @@ public class ChatBotRunner
 		if(statement.toLowerCase().equals("accessories"))
 		{
 			ChatBotMonroe chatbot4 = new ChatBotMonroe();
-			System.out.println(chatbot4.beginChat());
 			while(!statement.equals("Bye"))
 			{
 				System.out.println(chatbot4.getResponse(statement));

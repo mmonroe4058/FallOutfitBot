@@ -12,13 +12,6 @@ public class ChatBotMonroe {
 		String response = "";
 		
 		
-
-		
-		/*if(x == 7); 
-		{
-			response = "What kind of accessories are you looking for? Glasses, hats, scarves, earrings, necklaces?";
-		}*/
-		
 		if(findKeyword(statement, "glasses", 0) >= 0)
 		{
 			accessory = "glasses";

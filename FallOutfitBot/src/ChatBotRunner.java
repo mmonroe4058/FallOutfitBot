@@ -49,15 +49,20 @@ public class ChatBotRunner
 		if(statement.toLowerCase().equals("bottoms"))
 		{
 			ChatBotLamia chatbot2 =  new ChatBotLamia();
+			//statement = in.nextLine();
+			System.out.println(chatbot2.askname());
+			statement=in.nextLine();
+			System.out.println(chatbot2.getname(statement));
 			System.out.println(chatbot2.starttalking());
+			statement = in.nextLine();
 			while(!statement.equals("Bye"))
 			{
-				statement=in.nextLine();
+				//statement=in.nextLine();
 				System.out.print(chatbot2.getresponse(statement));
-				
+				statement=in.nextLine();
 				
 			}
-			statement = in.nextLine();
+			System.out.print("Farewell thee " + chatbot2.returnname());
 		}
 		
 		if(statement.toLowerCase().equals("shoes"))

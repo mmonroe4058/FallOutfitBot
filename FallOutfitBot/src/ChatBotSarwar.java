@@ -7,7 +7,7 @@ public class ChatBotSarwar {
 	public String getResponse(String statement)
 	{
 		String response = "";
-		if(statement.toLowerCase().equals("jacket"))
+		if(findKeyword(statement, "jacket") >= 0)
 		{
 			response = "Do you need help with finding something to wear underneath that jacket?";
 			if(statement.toLowerCase().equals("yes"))
@@ -18,6 +18,10 @@ public class ChatBotSarwar {
 			{
 				response = "Let's look for a jacket then.";
 			}*/
+		}
+		if(findKeyword(statement, "sweater") >= 0)
+		{
+			response = "What color do you want to see?";
 		}
 		return response;
 		
@@ -61,5 +65,24 @@ public class ChatBotSarwar {
 	private int findKeyword(String statement, String goal)
 	{
 		return findKeyword (statement, goal, 0);
+	}
+	public String getColor(String color)
+	{
+		if(color.toLowerCase().equals("blue"))
+		{
+			color = " ";
+		}
+		return color;
+	}
+	private String [] femaleSweaterLinks {
+		"https://i.pinimg.com/236x/b3/05/56/b305560e4e7594a48228a90d0934bef8--fall-fashion-women-winter-fashion.jpg", 
+		" "
+		
+	};
+	private String [] maleSweaterLinks {
+	};
+	private String [] uniSweaterLinks{
+	};
+	
 	}
 }

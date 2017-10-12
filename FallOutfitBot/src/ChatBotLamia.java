@@ -3,23 +3,30 @@ public class ChatBotLamia {
 	
 	public String starttalking()
 	{
-		return generateRandomResponse(randomgreetings) + "So what kind of pants are you generally interested in?";
+		return generateRandomResponse(randomgreetings) + " So what kind of pants are you generally interested in?";
 	} 
 	
 	public String getresponse(String statement)
 	{
-		starttalking();
+		int feelings = 0;
 		String response = " ";
 		String type = "";
 		if((findKeyword(statement,generateRandomResponse(pant_types),0))>=0)
 		{
+			type = generateRandomResponse(pant_types);
 			response = "You want " + type + ". Now can you tell me what kind of brands you would like of these types of pants?";
 			
 		}
 		else
-			{
-				response = generateRandomResponse(neutralstatements);
-			}
+		{
+				if(statement.equals(""))
+				{
+					response = "please, say something";
+					feelings --;
+				}
+				else {
+				response = generateRandomResponse(neutralstatements);}
+		}
 		
 		
 		return response;

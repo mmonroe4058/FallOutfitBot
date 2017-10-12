@@ -52,8 +52,9 @@ public class ChatBotRunner
 			System.out.println(chatbot2.starttalking());
 			while(!statement.equals("Bye"))
 			{
-				System.out.print(chatbot2.getresponse(statement));
 				statement=in.nextLine();
+				System.out.print(chatbot2.getresponse(statement));
+				
 				
 			}
 			statement = in.nextLine();

@@ -76,6 +76,8 @@ public class ChatBotRunner
 			{
 				System.out.println(chatbot3.getResponse(statement));
 				statement = in.nextLine();
+				System.out.println(chatbot3.determineEventType(statement));
+				statement = in.next();	
 			}			
 		}
 		if(statement.toLowerCase().equals("accessories"))

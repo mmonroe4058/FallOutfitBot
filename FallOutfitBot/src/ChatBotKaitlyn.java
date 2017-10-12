@@ -19,7 +19,7 @@ public class ChatBotKaitlyn {
 		String name = input.next();
 		
 		return "Need help picking some shoes, "+ name + "?";
-	} 
+	}  
 	
 	//private String [] randomGreetings = {"Hi", "How may I help you?", "Need help picking some shoes?"};
 	

@@ -2,13 +2,17 @@ import java.lang.reflect.Array;
 import java.util.Random;
 public class ChatBotLamia {
 	String name = "";
+	String type = " ";
+	String brand = " ";
+	//String publictype = "";
+	//String publicbrand = "";
 	public String returnname()
 	{
 		return name;
 	}
 	public String askname()
 	{
-		return generateRandomResponse(randomgreetings) + "\nThis is chatbot Lamia.  What is your name?";
+		return generateRandomResponse(randomgreetings) + ". This is chatbot Lamia.  What is your name?";
 	}
 	public String getname(String statement)
 	{
@@ -19,37 +23,43 @@ public class ChatBotLamia {
 		
 		
 	}
+	/*public String returnbrand(String statement)
+	{
+		brand = statement;
+		return "You want " + type + " of brand name " + brand;
+	}*/
 	public String starttalking()
 	{
-		return  " So what kind of pants are you generally interested in?";
+		return  " So what kind of pants are you generally interested in? Examples include jeans, pants, trousers, etc";
 	} 
+	
 	
 	public String getresponse(String statement)
 	{
-		//getname(statement);
-		//starttalking();
-		//int feelings = 3;
-		String response = " ";
-		String type = "";
-		if((findKeyword(statement,SearchArray(pant_types,statement),0))>=0)
-		{
-			type = SearchArray(pant_types,statement);
-			response = "You want " + type + ". Now can you tell me what kind of brands you would like of these types of pants?\n";
-			
-		}
 		
+		String response = " ";
+		if(statement.equals(" "))
+		{
+			response = "please, say something :C\n";
+		}
 		else
-		{		
-				if(statement.equals(""))
-				{
-					response = "please, say something"+"\n";
-					//feelings --;
-				}
-				else {
+		{
+			if((findKeyword(statement,SearchArray(pant_types,statement),0))>=0)
+			{
+				type = SearchArray(pant_types,statement);
+				//type = SearchArray(pant_types,statement);
+				String s = "You want " + type + ". Now can you tell me what kind of brand you would like of these types of pants?Examples include Levis, Calvin Klein,etc.\n";
+				response = s;
+				//returnbrand(statement);
+				
+			}
+		}
+				
+				
 					
 				  response = generateRandomResponse(neutralstatements)+"\n";
-				}
-		}
+				
+		
 		
 		
 		return response;

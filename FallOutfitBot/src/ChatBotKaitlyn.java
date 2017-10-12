@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 //import java.util.Random;
 /*Title: ChatBot that helps indecisive users pick out shoes
@@ -13,7 +14,7 @@ public class ChatBotKaitlyn {
 	{
 		//Random r = new Random();
 		//return randomGreetings[r.nextInt(randomGreetings.length)];
-		System.out.println("Hey! What's your name?");
+		System.out.println("Hey! I'm Kiki! What's your name?");
 		input = new Scanner(System.in);
 		String name = input.next();
 		
@@ -27,7 +28,7 @@ public class ChatBotKaitlyn {
 		String response = "";
 		if(statement.length() == 0)
 		{
-			response = "I'd love to help you. Talk to me. Please?";
+			response = "I'd love to help you. Talk to me...please?";
 		}
 		else if (findKeyword(statement, "no") >= 0)
 		{
@@ -36,16 +37,44 @@ public class ChatBotKaitlyn {
 		}
 		else if (findKeyword(statement, "yes") >= 0)
 		{
-			response = "Great!";
-			feelings++;
+			response = "Great! What's the agenda today? Are you working out, going to work, attending an event, or just hanging with friends?";
+			//feelings++;
 		}
 		return response;
 	}
-	
-/* public String shoeType(String statement)
+
+	public String determineEventType(String statement)
 	{
-		System.out.println("Do you want to wear sneakers, ");
+		String response = "";
+		statement = statement.trim();
+		if(findKeyword(statement, "working out") >= 0)
+		{
+			response =  "You should wear sneakers";
+		}
+		if(findKeyword(statement, "event") >= 0)
+		{
+			response =  "You could wear either heels or flats. Which do you prefer?";
+		}
+		if(findKeyword(statement, "work") >= 0)
+		{
+			response =  "Does your work involve a lot of running around?";
+		}
+		if(findKeyword(statement, "friends") >= 0)
+		{
+			response =  "Are you going out or staying in?";
+		}
+		return response;
+		
 	}
+/*	private String getRandomResponse()
+	{
+		Random r = new Random();
+		if(feelings == 0)
+		{
+			return randomNeutralResponses[r.nextInt(randomNeutralResponses.length)];
+		}
+	}
+	private String [] randomNeutralResponses = {"hmm...", "Could you repeat that?", "I like trains."};
 */
 	/**
 	 * Search for one word in phrase. The search is not case

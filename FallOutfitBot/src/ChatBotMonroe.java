@@ -1,17 +1,21 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.net.URL;
+import java.net.HttpURLConnection;
 
 public class ChatBotMonroe {
 	int emotion = 0;
 	Scanner in = new Scanner (System.in);
 	String accessory = "";
-	
+	int beginSearch = 0;
+	String[] colorArray = {"red", "orange", "yellow", "green", "blue", "purple", "pink", "black", "gray", "white"};
+	String[] accessoryArray = {"glasses", "hats", "scarves", "earrings"};
 	
 	public String getResponse(String statement)
 	{
 		String response = "";
-		
-		
+			
+		/*
 		if(findKeyword(statement, "glasses", 0) >= 0)
 		{
 			accessory = "glasses";
@@ -36,137 +40,55 @@ public class ChatBotMonroe {
 		{
 			response = "Sorry, what accessory was that?";
 		}
+		*/
 		
-		
-		if(findKeyword(statement, "green", 0) >= 0)
+		if(statement.length() == 0)
 		{
-			if(accessory == "glasses")
+			return response = "Did you say something?";
+		}
+		
+		if(findKeyword(statement, "accessories", 0) >= 0)
+		{
+			return response = "What kind of accessories would you like? We are currently more familiar with glasses, hats, scarves, and earrings.";
+		}
+		
+		for(int x = 0; x < accessoryArray.length; x++)
+		{
+			if(findKeyword(accessoryArray[x], statement.toLowerCase(), 0) >= 0)
 			{
-				response = "You would like" + "green" + accessory + "correct?";
+				accessory = accessoryArray[x];
+				return response = "You said " + accessory.toLowerCase() + ". " + "What color would you like them in?";
 			}
-			else if(accessory.toLowerCase().equals("hats"))
+			else
 			{
-				response = "You would like" + "green" + accessory + "correct?";
+				response = "Sorry, what accessory was that?";
 			}
-			else if(accessory.toLowerCase().equals("scarves"))
+		}
+		
+		for(int x = 0; x < colorArray.length; x++)
+		{
+			if(findKeyword(colorArray[x], statement.toLowerCase(), 0) >= 0)
 			{
-				response = "You would like" + "green" + accessory + "correct?";
-			}
-			else if(accessory.toLowerCase().equals("earrings"))
-			{
-				response = "You would like" + "green" + accessory + "correct?";
+				beginSearch = 1;
+				return response = "You would like " + statement + " " + accessory.toLowerCase() + " " + "correct?";			
 			}
 			else
 			{
 				response = "Sorry, what color was that?";
 			}
-				
-			
 		}
 		
-		if(statement.length() == 0)
+		if(beginSearch == 1)
 		{
-			response = "Did you say something?";
+			return response = "wee woo";
 		}
+		
 		
 		return response;
 		
+		
 	}
 	
-	/*private String getAccessory(String accessory, String color)
-	{
-		if(accessory == "glasses")
-		{
-			
-			if(color == "red")
-			{
-				return accessory + color + "?";
-			}
-			
-			if(color == "green")
-			{
-				return accessory + color + "?";
-			}
-			
-			if(color == "blue")
-			{
-				return accessory + color + "?";
-			}
-			
-			if(color == "yellow")
-			{
-				return accessory + color + "?";
-			}
-			
-			if(color == "purple")
-			{
-				return accessory + color + "?";
-			}
-			
-			if(color == "pink")
-			{
-				return accessory + color + "?";
-			}
-		}
-		
-		if(accessory == "earrings")
-		{
-			if(color == "red")
-			{
-				return accessory + color + "?";
-			}
-			
-			if(color == "green")
-			{
-				return accessory + color + "?";
-			}
-			
-			if(color == "blue")
-			{
-				return accessory + color + "?";
-			}
-			
-			if(color == "yellow")
-			{
-				return accessory + color + "?";
-			}
-			
-			if(color == "purple")
-			{
-				return accessory + color + "?";
-			}
-			
-			if(color == "pink")
-			{
-				return accessory + color + "?";
-			}
-		}
-		
-		if(accessory == "necklaces")
-		{
-			if(color == "green")
-			{
-				return color;
-			}
-		}
-		
-		if(accessory == "hats")
-		{
-			if(color == "green")
-			{
-				return color;
-			}
-		}
-		
-		if(accessory == "scarves")
-		{
-			if(color == "green")
-			{
-				return color;
-			}
-		}
-		return color;
-	} */
 	
 	private int findKeyword(String statement, String goal,
 			int startPos)
